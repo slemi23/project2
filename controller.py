@@ -5,12 +5,23 @@ QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 class Controller(QWidget, Ui_Form):
+
+    """
+    Class to create registration object
+    """
     def __init__(self, *args, **kwargs):
+        """
+        Constructor to create state of registration
+
+        """
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.register_button.clicked.connect(lambda: self.register())
 
-    def register(self):
+    def register(self) -> str:
+        """"
+        function that verifies all fields are input correctly
+        """
         firstName = self.first_name.text()
         lastName = self.last_name.text()
         emailAddress = self.email.text()
