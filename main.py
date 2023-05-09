@@ -1,5 +1,5 @@
 from controller import *
-import res_rc
+
 
 def main():
     app = QApplication([])
